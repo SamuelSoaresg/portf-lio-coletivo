@@ -25,12 +25,163 @@
     </header>
 
     <section class="hero">
+         <div class="bubbles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <div class="hero-content">
-            <h2>Bem-vindo ao InSync</h2>
-            <p>Soluções inteligentes para conectar suas ideias ao futuro.</p>
+            <h1>InSync</h1>
+            <h2>Soluções Inteligentes</h2>
+            <p>para conectar suas ideias ao futuro.</p>
+            <a href="#sobre" class="btn-hero">Conheça nosso trabalho</a>
+
+            <div class="cards-container">
+                <div class="card-item">
+                    <div class="card">
+                        <img src="assets/code_icon.png" alt="Código">
+                    </div>
+                    <p>Código</p>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <img src="assets/bolt_icon.png" alt="Inovação">
+                    </div>
+                    <p>Inovação</p>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <img src="assets/group_icon.png" alt="Parceria">
+                    </div>
+                    <p>Parceria</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Nossas <span>Skills</span></h2>
+            <p class="section-subtitle">Combinamos diferentes especialidades para entregar soluções completas.</p>
+
+            <div class="skills-columns">
+                <div class="skills-column">
+                    <h3>Alex - Frontend & UX</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="React"><span>React</span></div>
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="TypeScript"><span>TypeScript</span></div>
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="Next.js"><span>Next.js</span></div>
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="Tailwind CSS"><span>Tailwind CSS</span></div>
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="Figma"><span>Figma</span></div>
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="Git"><span>Git</span></div>
+                    </div>
+                </div>
+
+                <div class="skills-column">
+                    <h3>Bruno - Backend & DevOps</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="Node.js"><span>Node.js</span></div>
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="Python"><span>Python</span></div>
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="PostgreSQL"><span>PostgreSQL</span></div>
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="Docker"><span>Docker</span></div>
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="AWS"><span>AWS</span></div>
+                        <div class="skill-card"><img class="skill-icon" src="assets/code_icon.png" alt="MongoDB"><span>MongoDB</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia" class="projects">
+        <div class="container">
+            <h2 class="section-title">Experiência & <span>Projetos</span></h2>
+            <p class="section-subtitle">Projetos Técnicos</p>
+
+            <div class="projects-grid">
+                
+                <article class="project-card">
+                    <div class="project-cover" style="background-image: url('assets/cover-poupeme.png');">
+                        <span class="badge">Web App</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">PoupeMe</h3>
+                        <p class="project-desc">Aplicação web de finanças pessoais em Java (Spring Boot), hospedada no Google Cloud. Em funcionamento até hoje.</p>
+                        <ul class="project-meta">
+                            <li> poupeme.site</li>
+                            <li> 👤 Samuel</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Google Cloud</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-ghost">Código</a>
+                            <a href="https://poupeme.site" target="_blank" rel="noopener" class="btn btn-primary">Link</a>
+                        </div>
+                    </div>
+                </article>
+
+                
+                <article class="project-card">
+                    <div class="project-cover" style="background-image: url('assets/cover-financas-kotlin.jpg');">
+                        <span class="badge">Android App</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">App de Finanças Pessoais</h3>
+                        <p class="project-desc">Aplicativo Android para gestão de finanças, com categorias, lançamentos e armazenamento local.</p>
+                        <ul class="project-meta">
+                            <li> Kotlin</li>
+                            <li> 👤 Samuel</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">Android SDK</span>
+                            <span class="tag">SQLite</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-ghost">Código</a>
+                        </div>
+                    </div>
+                </article>
+
+                
+                <article class="project-card">
+                    <div class="project-cover" style="background-image: url('assets/cover-franquia-webview.jpg');">
+                        <span class="badge">Android WebView</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">App de Franquia Digital</h3>
+                        <p class="project-desc">Aplicativo simples em Kotlin, servindo como WebView para sistema de franquia digital.</p>
+                        <ul class="project-meta">
+                            <li> Kotlin</li>
+                            <li> 👤 Samuel</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">WebView</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-ghost">Código</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
     
+
     <section id="sobre" class="sobre-nos">
         <div class="intro">
           <h2>Sobre Nós</h2>
@@ -90,6 +241,7 @@
 </div>
 </div>
 </section>
+    
 
 </body>
 </html>
