@@ -84,6 +84,64 @@ nav ul li a:hover::after {
 }
 
 
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid #2b2f33;
+  border-radius: 8px;
+  width: 44px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #e7e7e7;
+  margin: 0;
+  border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+
+.menu-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+
+@media (max-width: 768px) {
+  header { position: sticky; top: 0; }
+
+  .menu-toggle { display: inline-flex; }
+
+  
+  #primary-nav {
+    position: absolute;
+    top: 68px;
+    right: 20px;
+    background: #0d0d0d;
+    border: 1px solid #2b2b2b;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.45);
+    padding: 10px;
+    display: none;
+    z-index: 1100;
+  }
+  #primary-nav.open { display: block; }
+
+  
+  #primary-nav ul { 
+    display: grid; 
+    gap: 8px; 
+    margin: 0; 
+  }
+  #primary-nav ul li a { padding: 8px 10px; display: block; }
+}
+
 /*-----------HERO-----------*/
 
 .hero {
@@ -454,7 +512,13 @@ nav ul li a:hover::after {
     align-items: flex-start;
     justify-content: center;     
     padding-top: 80px;
-  }
+    padding-bottom: 80px; 
+    padding-inline: clamp(12px, 4vw, 24px);
+}
+
+@media (min-width: 992px) {
+  .skills { padding-inline: 24px; }
+}
 
 .skills .container {
     max-width: 1100px;
@@ -478,7 +542,7 @@ nav ul li a:hover::after {
 
 .skills-columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 32px;
 }
 
@@ -525,6 +589,18 @@ nav ul li a:hover::after {
 }
 
 
+@media (max-width: 1000px) {
+  .skills-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
 /*-----------EXPERIÊNCIA-----------*/
 
 .projects {
@@ -549,7 +625,7 @@ nav ul li a:hover::after {
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 10px 24px rgba(0,0,0,0.35);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
     cursor: pointer;
 }
 
