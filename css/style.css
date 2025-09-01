@@ -960,3 +960,60 @@ nav ul li a:hover::after {
 .plane { 
   font-weight: 700; 
 }
+
+.back-to-top {
+  position: fixed;
+  top: 100px;   
+  right: 20px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(135deg, #00aaff, #0066ff);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,.3);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: 
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+  z-index: 900;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: linear-gradient(135deg, #00ccff, #0077ff);
+  box-shadow: 0 0 12px rgba(0,170,255,0.6),
+              0 0 25px rgba(0,102,255,0.3);
+  transform: scale(1.05);
+}
+
+.back-to-top:active {
+  transform: scale(0.95);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid #00aaff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .back-to-top {
+    top: 12px;
+    right: 12px;
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}

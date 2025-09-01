@@ -71,3 +71,28 @@
     closeMenu();
   });
 })();
+
+// Voltar ao Topo
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const threshold = 300; 
+
+      function updateBackToTopVisibility() {
+        const show = window.scrollY > threshold;
+        backToTop.toggleAttribute('hidden', !show);
+        backToTop.classList.toggle('show', show);
+      }
+
+      window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+      window.addEventListener('load', updateBackToTopVisibility);
+
+      backToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (prefersReduced.matches) {
+          window.scrollTo(0, 0);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    }
