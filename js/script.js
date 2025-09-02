@@ -1,54 +1,3 @@
-//formulario
-var form = document.getElementById("formContato");
-var nome = document.getElementById("nome");
-var email = document.getElementById("email");
-var mensagem = document.getElementById("mensagem");
-var aviso = document.getElementById("mensagemErro");
-var btnLimpar = document.getElementById("limpar");
-
-function verificarEmail(email) {
-  if (email.indexOf("@") > 0 && email.indexOf(".") > email.indexOf("@")) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault(); 
-
-  if (nome.value == "" || email.value == "" || mensagem.value == "") {
-    aviso.textContent = "Tente novamente! Todos os campos são obrigatórios.";
-    aviso.style.color = "red";
-  }
-
-  else if (nome.value.length < 6) {
-    aviso.textContent = "Tente novamente! O nome deve ter pelo menos 6 caracteres.";
-    aviso.style.color = "red";
-  }
-
-  else if (!verificarEmail(email.value)) {
-    aviso.textContent = "Tente novamente! Digite um email válido.";
-    aviso.style.color = "red";
-  }
-
-  else {
-    aviso.textContent = "Obrigado! Seus dados foram preenchidos corretamente.";
-    aviso.style.color = "green";
-    
-    nome.value = "";
-    email.value = "";
-    mensagem.value = "";
-  }
-});
-
-btnLimpar.addEventListener("click", function() {
-  nome.value = "";
-  email.value = "";
-  mensagem.value = "";
-  aviso.textContent = "";
-});
-
 // Menu Sanduíche Mobile
 (function () {
   'use strict';
@@ -124,27 +73,79 @@ btnLimpar.addEventListener("click", function() {
 })();
 
 // Voltar ao Topo
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const threshold = 300; 
+document.addEventListener('DOMContentLoaded', function () {
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const threshold = 300; 
 
-      function updateBackToTopVisibility() {
-        const show = window.scrollY > threshold;
-        backToTop.toggleAttribute('hidden', !show);
-        backToTop.classList.toggle('show', show);
-      }
-
-      window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
-      window.addEventListener('load', updateBackToTopVisibility);
-
-      backToTop.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (prefersReduced.matches) {
-          window.scrollTo(0, 0);
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
+    function updateBackToTopVisibility() {
+      const show = window.scrollY > threshold;
+      backToTop.toggleAttribute('hidden', !show);
+      backToTop.classList.toggle('show', show);
     }
 
+    window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+    window.addEventListener('load', updateBackToTopVisibility);
+
+    backToTop.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (prefersReduced.matches) {
+        window.scrollTo(0, 0);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+});
+
+    //formulario
+var form = document.getElementById("formContato");
+var nome = document.getElementById("nome");
+var email = document.getElementById("email");
+var mensagem = document.getElementById("mensagem");
+var aviso = document.getElementById("mensagemErro");
+var btnLimpar = document.getElementById("limpar");
+
+function verificarEmail(email) {
+  if (email.indexOf("@") > 0 && email.indexOf(".") > email.indexOf("@")) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault(); 
+
+  if (nome.value == "" || email.value == "" || mensagem.value == "") {
+    aviso.textContent = "Tente novamente! Todos os campos são obrigatórios.";
+    aviso.style.color = "red";
+  }
+
+  else if (nome.value.length < 6) {
+    aviso.textContent = "Tente novamente! O nome deve ter pelo menos 6 caracteres.";
+    aviso.style.color = "red";
+  }
+
+  else if (!verificarEmail(email.value)) {
+    aviso.textContent = "Tente novamente! Digite um email válido.";
+    aviso.style.color = "red";
+  }
+
+  else {
+    aviso.textContent = "Obrigado! Seus dados foram preenchidos corretamente.";
+    aviso.style.color = "green";
+    
+    nome.value = "";
+    email.value = "";
+    mensagem.value = "";
+  }
+});
+
+btnLimpar.addEventListener("click", function() {
+  nome.value = "";
+  email.value = "";
+  mensagem.value = "";
+  aviso.textContent = "";
+});
